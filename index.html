@@ -1,95 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Git Tutorial Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      background: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-    h1 {
-      color: #ffffff;
-    }
-    h2 {
-      color: #003366;
-    }
-    .exercise {
-      background: #e0f0ff;
-      padding: 15px;
-      border-radius: 6px;
-    }
-    code {
-      background: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Software Engineering Git Practice</h1>
-  </header>
-  <div class="container">
-    <p>Welcome to the Git practical session. This webpage is part of your hands-on tutorial to understand Git and GitHub workflows.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Tutorial Page (Modified)</title>
+    <style>
+      :root {
+        --primary-color: #003366;
+        --secondary-color: #e0f0ff;
+        --text-color: #333;
+        --white: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-    <section class="exercise">
-      <h2>Your Task</h2>
-      <ol>
-        <li>Fork this repository (<a href="https://github.com/alfhisa/se-tutrial-git">https://github.com/alfhisa/se-tutrial-git</a>)</li>
-        <li>Clone the forked repository
-          <ul>
-            <li><code>git clone https://github.com/alfhisa/se-tutrial-git.git</code></li>
-            <li><code>cd se-tutrial-git</code></li>
-          </ul>
-        </li>
-        <li>Create a new branch
-          <ul>
-            <li><code>git checkout -b latihan-git</code> <em>(you may name the branch as you like)</em></li>
-          </ul>
-        </li>
-        <li>Edit this file (index.html) and add your name and insight.
-          <ul>
-            <li>Edit the file as creatively as possible</li>
-            <li>You can also add more files if you want</li>
-          </ul>
-        </li>
-        <li>Commit and Push your changes
-          <ul>
-            <li><code>git add .</code></li>
-            <li><code>git commit -m "Edit the index.html file"</code> <em>(you may change the message)</em></li>
-            <li><code>git push origin latihan-git</code> <em>(adjust with your branch name)</em></li>
-          </ul>
-        </li>
-        <li>Open a pull request on GitHub
-          <ul>
-            <li>Visit your forked repo</li>
-            <li>Click "Compare & pull request"</li>
-            <li>Fill out the title and description</li>
-            <li>Submit the pull request</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  </div>
-  <footer>
-    <p>&copy; 2025 https://alfhisa.github.io/ - Software Engineering Tutorial</p>
-  </footer>
-</body>
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(135deg, #f4f4f4 0%, #e8ecef 100%);
+        line-height: 1.6;
+        color: var(--text-color);
+      }
+
+      header {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+      }
+
+      .welcome-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+        text-align: center;
+      }
+
+      .exercise {
+        background: var(--secondary-color);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        border-left: 5px solid var(--primary-color);
+      }
+
+      h2 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+      }
+
+      ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      ol li {
+        margin: 0.8rem 0;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+        margin-top: 0.5rem;
+      }
+
+      code {
+        background: #f0f0f0;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        color: #d63384;
+        font-size: 0.95rem;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #005599;
+        text-decoration: underline;
+      }
+
+      .step-card {
+        background: #fafafa;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+      }
+
+      .step-card:hover {
+        background: #f0f0f0;
+      }
+
+      footer {
+        background: var(--primary-color);
+        color: var(--white);
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #66b2ff;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        header h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Software Engineering Git Practice</h1>
+    </header>
+    <div class="container">
+      <p class="welcome-text">
+        Welcome to the Git practical session! This interactive tutorial will
+        guide you through the essentials of Git and GitHub workflows.
+      </p>
+
+      <section class="exercise">
+        <h2>Your Task</h2>
+        <ol>
+          <li class="step-card">
+            Fork this repository:
+            <ul>
+              <li>
+                Visit
+                <a href="https://github.com/alfhisa/se-tutrial-git"
+                  >https://github.com/alfhisa/se-tutrial-git</a
+                >
+                and click "Fork".
+              </li>
+            </ul>
+          </li>
+          <li class="step-card">
+            Clone the forked repository:
+            <ul>
+              <li>
+                <code
+                  >git clone https://github.com/alfhisa/se-tutrial-git.git</code
+                >
+              </li>
+              <li><code>cd se-tutrial-git</code></li>
+            </ul>
+          </li>
+          <li class="step-card">
+            Create a new branch:
+            <ul>
+              <li>
+                <code>git checkout -b latihan-git</code>
+                <em>(name the branch as you prefer)</em>
+              </li>
+            </ul>
+          </li>
+          <li class="step-card">
+            Edit this file (index.html) and add your name and insight:
+            <ul>
+              <li>Be as creative as possible with your edits.</li>
+              <li>Feel free to add additional files if desired.</li>
+            </ul>
+          </li>
+          <li class="step-card">
+            Commit and push your changes:
+            <ul>
+              <li><code>git add .</code></li>
+              <li>
+                <code>git commit -m "Edit the index.html file"</code>
+                <em>(customize the message)</em>
+              </li>
+              <li>
+                <code>git push origin latihan-git</code>
+                <em>(use your branch name)</em>
+              </li>
+            </ul>
+          </li>
+          <li class="step-card">
+            Open a pull request on GitHub:
+            <ul>
+              <li>Visit your forked repository.</li>
+              <li>Click "Compare & pull request".</li>
+              <li>Add a title and description.</li>
+              <li>Submit the pull request.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+    </div>
+    <footer>
+      <p>
+        © 2025 <a href="https://alfhisa.github.io/">alfhisa.github.io</a> -
+        Software Engineering Tutorial
+      </p>
+    </footer>
+  </body>
 </html>
