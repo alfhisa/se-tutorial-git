@@ -1,0 +1,61 @@
+.darktheme {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.darktheme header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.darktheme header button {
+    height: 40px;
+    width: 120px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+.darktheme header,
+.darktheme footer {
+    background: #1a237e; /* dark indigo */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.darktheme .container {
+    max-width: 800px;
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.darktheme h1 {
+    color: #ffffff;
+}
+
+.darktheme h2 {
+    color: #90caf9; /* light blue */
+}
+
+.darktheme .exercise {
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #444;
+}
+
+.darktheme code {
+    background: #333;
+    color: #ffcc00;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
